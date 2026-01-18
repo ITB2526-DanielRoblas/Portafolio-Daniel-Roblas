@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Daniel Roblas Portfolio</title>
+  <link rel="stylesheet" href="Paguina.css" />
+  <script src="Paguina.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    #fondo-animado {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: -1 !important;
+      pointer-events: none !important;
+      display: block !important;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://dca.cat/wp-content/uploads/2022/05/ITB_Logo_ITBdesc_800-Direccio-ITB-Alberto-Vila.png" alt="Logo" style="height:40px;vertical-align:middle;" />
+    <nav>
+      <ul>
+        <li><a href="Paguina.html">Home</a></li>
+        <li><a href="llistat.html">Project List</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Welcome</h2>
+      <p>ASIXc course projects.</p>
+    </section>
+    <section>
+      <h2>Featured Projects</h2>
+      <article>
+        <h3>Project 1</h3>
+        <a href="proyecto1.html"><button type="button" class="btn-serio">Ver proyecto</button></a>
+        <p>Short description of Project 1.</p>
+      </article>
+      <article>
+        <h3>Project 2</h3>
+        <a href="proyecto2.html"><button type="button" class="btn-serio">Ver proyecto</button></a>
+        <p>Short description of Project 2.</p>
+      </article>
+    </section>
+    <aside>
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+    </aside>
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="#" method="post">
+        Name: <input type="text" name="name" /><br />
+        Email: <input type="email" name="email" /><br />
+        Message: <textarea name="message"></textarea><br />
+        <button type="submit">Send</button>
+      </form>
+      <p>Contact: daniel.roblas.7e9@itb.cat</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Daniel Roblas</p>
+  </footer>
+</body>
+</html>
