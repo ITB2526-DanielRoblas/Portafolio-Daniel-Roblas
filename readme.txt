@@ -1,21 +1,20 @@
-# Portafolio Web – Daniel Roblas
+# Web Portfolio – Daniel Roblas
 
-## Descripción
-Página web personal donde se muestran los proyectos realizados.
-Incluye una página principal y una lista de proyectos.
+## Description
+Personal website showcasing completed projects. Includes a main page and a project list.
 
-## Tecnologías usadas
+## Technologies Used
 - HTML5
 - CSS3
 - JavaScript
 
-## Estructura del proyecto
-- Pagina.html → Página principal
-- llistat.html → Lista de proyectos
-- Pagina.css → Estilos
-- Pagina.js → Funcionalidad
-- docs/ → Documentación del proyecto
+## Project Structure
+- Pagina.html → Main page
+- llistat.html → Project list
+- Pagina.css → Styles
+- Pagina.js → Functionality
+- docs/ → Project documentation
 
-## Publicación
-Web publicada con GitHub Pages:
-https://TU-URL-AQUI
+## Deployment
+Website published with GitHub Pages:
+https://itb2526-danielroblas.github.io/Portafolio-Daniel-Roblas/index.html
