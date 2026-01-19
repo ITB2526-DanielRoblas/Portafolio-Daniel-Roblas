@@ -11,6 +11,10 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
+    body {
+      background: linear-gradient(135deg, #e0e7ff 0%, #f4f7fa 100%);
+      /* Fondo suave azul-violeta */
+    }
     #fondo-animado {
       position: fixed !important;
       top: 0 !important;
@@ -24,6 +28,7 @@
   </style>
 </head>
 <body>
+  <canvas id="fondo-animado"></canvas>
   <header>
     <img src="https://dca.cat/wp-content/uploads/2022/05/ITB_Logo_ITBdesc_800-Direccio-ITB-Alberto-Vila.png" alt="Logo" style="height:40px;vertical-align:middle;" />
     <nav>
@@ -38,26 +43,32 @@
     <section>
       <h2>Welcome</h2>
       <p>ASIXc course projects.</p>
+      <p>This portfolio showcases the main projects I have developed during my studies in the ASIX (Administration of Computer Systems in Network) program. Here you will find practical examples of automation, system administration, and research, all aimed at improving technical skills and solving real-world IT challenges. Each project reflects my learning journey, dedication, and passion for technology.</p>
     </section>
     <section>
       <h2>Featured Projects</h2>
       <article>
-        <h3>Project 1</h3>
-        <a href="proyecto1.html"><button type="button" class="btn-serio">Ver proyecto</button></a>
-        <p>Short description of Project 1.</p>
+        <h3>Project 1: Bash Scripting</h3>
+        <a href="pdf/projecte1-bash.pdf"><button type="button" class="btn-serio">View PDF</button></a>
+        <p>Project focused on automating tasks in Linux systems using Bash scripts. Includes backup automation, user management, and process monitoring to improve system administration and efficiency.</p>
       </article>
       <article>
-        <h3>Project 2</h3>
-        <a href="proyecto2.html"><button type="button" class="btn-serio">Ver proyecto</button></a>
-        <p>Short description of Project 2.</p>
+        <h3>Project 2: High School Research Project (TDR)</h3>
+        <a href="pdf/projecte2-TDR.pdf"><button type="button" class="btn-serio">View PDF</button></a>
+        <p>This is my high school research project (TDR), where I investigated and developed a topic of personal interest using the scientific method. The work includes analysis, development, and conclusions, demonstrating research and presentation skills.</p>
       </article>
     </section>
     <aside>
       <h2>Skills</h2>
       <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
+        <li>Bash Scripting & Automation</li>
+        <li>Linux System Administration</li>
+        <li>Network Configuration & Security</li>
+        <li>Backup and Recovery</li>
+        <li>User and Permission Management</li>
+        <li>Problem Solving & Troubleshooting</li>
+        <li>Research & Technical Documentation</li>
+        <li>Version Control (Git)</li>
       </ul>
     </aside>
     <section id="contact">
@@ -74,5 +85,43 @@
   <footer>
     <p>&copy; 2025 Daniel Roblas</p>
   </footer>
+  <script>
+    // Fondo animado de burbujas
+    const canvas = document.getElementById('fondo-animado');
+    const ctx = canvas.getContext('2d');
+    let bubbles = [];
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    function createBubble() {
+      return {
+        x: Math.random() * canvas.width,
+        y: canvas.height + 20,
+        r: 10 + Math.random() * 30,
+        speed: 1 + Math.random() * 2,
+        alpha: 0.2 + Math.random() * 0.3
+      };
+    }
+    for (let i = 0; i < 30; i++) bubbles.push(createBubble());
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let b of bubbles) {
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.r, 0, 2 * Math.PI);
+        ctx.fillStyle = `rgba(100, 149, 237, ${b.alpha})`;
+        ctx.fill();
+        b.y -= b.speed;
+        if (b.y + b.r < 0) {
+          Object.assign(b, createBubble());
+          b.y = canvas.height + b.r;
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
 </body>
 </html>
